@@ -1,10 +1,23 @@
 import refs from './refs';
-import error from './pnotify';
-import countries from '../templates/countries.hbs';
+import errorMessage from './pnotify';
+import country from '../templates/countries.hbs';
+import listCountries from '../templates/list.hbs';
 
-function updateMarkup(template, articles) {
-  const markup = template(articles);
+function updateCountriesMarkup(data) {
+  if (data.length > 10) {
+    errorMessage();
+    return;
+  }
+
+  let markup;
+  if (data.length === 1) {
+    markup = country(data);
+  }
+  if (data.length >= 2 && data.length <= 10) {
+    markup(data);
+  }
+
   refs.container.insertAdjacentHTML('beforeend', markup);
 }
 
-export default updateMarkup;
+export default updateCountriesMarkup;
