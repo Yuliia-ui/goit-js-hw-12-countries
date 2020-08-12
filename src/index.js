@@ -1,5 +1,7 @@
 import './styles.css';
-import countries from './js/fetchCountries';
-import refs from './js/refs';
 import debounce from 'lodash.debounce';
-refs.input.addEventListener('input', debounce(fetchCountries, 800));
+import fetchCountries from './js/fetchCountries';
+import countries from './templates/countries.hbs';
+import list from './templates/list.hbs';
+import markup from './js/markup';
+import refs from './js/refs';

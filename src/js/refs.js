@@ -1,4 +1,4 @@
-const input = document.querySelector('.form_input');
+const input = document.querySelector('.input_form');
 const container = document.querySelector('.country');
 
 export default { input, container };

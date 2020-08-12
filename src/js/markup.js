@@ -1,4 +1,6 @@
 import refs from './refs';
+import error from './pnotify';
+import countries from '../templates/countries.hbs';
 
 function updateMarkup(template, articles) {
   const markup = template(articles);
