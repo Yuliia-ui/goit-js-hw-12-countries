@@ -14,7 +14,7 @@ function updateCountriesMarkup(data) {
     markup = country(data);
   }
   if (data.length >= 2 && data.length <= 10) {
-    markup(data);
+    markup=listCountries(data);
   }
 
   refs.container.insertAdjacentHTML('beforeend', markup);
